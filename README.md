@@ -35,4 +35,4 @@ This is a Streamlit-based web application for visualizing and analyzing datasets
 
 1. Clone the repository.
 2. Install the required packages: `pip install streamlit pandas matplotlib seaborn`
-3. Run the app: `streamlit run dq_xi.py`
+3. Run the app: `streamlit run dq_check.py`
