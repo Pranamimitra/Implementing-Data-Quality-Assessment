@@ -12,6 +12,16 @@ st.sidebar.title('Options')
 # File upload in the sidebar
 uploaded_file = st.sidebar.file_uploader("Upload your dataset (CSV file)", type=['csv'])
 
+def remove_outliers_iqr(data, column):
+    "Remove outliers using the IQR method."""
+    Q1 = data[column].quantile(0.25)
+    Q3 = data[column].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+    filtered_data = data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]
+    return filtered_data
+
 # Visualization type selection in the sidebar
 visualization_type = st.sidebar.selectbox('Select Visualization Type', [
     'Histogram', 'Scatter Plot', 'Box Plot', 'Heatmap', 
