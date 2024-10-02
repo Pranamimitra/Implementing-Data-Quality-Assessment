@@ -21,12 +21,32 @@ def remove_outliers_iqr(data, column):
     upper_bound = Q3 + 1.5 * IQR
     filtered_data = data[(data[column] >= lower_bound) & (data[column] <= upper_bound)]
     return filtered_data
+    
+if uploaded_file:
+    try:
+        # Load the dataset
+        df = pd.read_csv(uploaded_file)
+        st.write("Dataset Preview:")
+        st.write(df.head())
+        st.write(f"Shape of the dataset: {df.shape}")
+        st.write(f"Data types:\n{df.dtypes}")
 
+        # Show columns only if the dataset is loaded
+        columns = df.columns.tolist()
+
+        # Outlier handling option
+        if st.sidebar.checkbox('Remove Outliers'):
+            column_to_check = st.sidebar.selectbox('Select Column for Outlier Removal', columns)
+            df = remove_outliers_iqr(df, column_to_check)
+            st.write(f"Outliers removed based on {column_to_check}. New shape: {df.shape}")
+
+        # Visualization type selection in the sidebar
+        visualization_type = st.sidebar.selectbox('Select Visualization Type', [
+            'Histogram', 'Scatter Plot', 'Box Plot', 'Heatmap', 
+            'Line Plot', 'Bar Plot', 'Pair Plot', 'Pie Chart'
+        ])
 # Visualization type selection in the sidebar
-visualization_type = st.sidebar.selectbox('Select Visualization Type', [
-    'Histogram', 'Scatter Plot', 'Box Plot', 'Heatmap', 
-    'Line Plot', 'Bar Plot', 'Pair Plot', 'Pie Chart'
-])
+
 
 # Check if a file is uploaded
 if uploaded_file:
