@@ -1,7 +1,7 @@
 #Following libraries are used as dependencies for implementation of theis project.
 #This file can be run by punching in the command: pip install -r Requirements.txt
 
-Python 3.x
+python 3.12
 streamlit
 pandas
 matplotlib
