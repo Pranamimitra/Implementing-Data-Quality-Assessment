@@ -25,6 +25,9 @@ This is a Streamlit-based web application for visualizing and analyzing datasets
 
 ## Installation
 
-1. Clone the repository.
+For the detailed installation and configuration guide, please refer to the Technical manual.
+1. Clone the repository using the following commands:
+        `git clone [repository_url]`
+        `cd [repository_name]`
 2. Install the required packages: `pip install streamlit pandas matplotlib seaborn`
 3. Run the app: `streamlit run dq_check.py`
