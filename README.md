@@ -23,14 +23,6 @@ This is a Streamlit-based web application for visualizing and analyzing datasets
 3. Customize the plot using the available options (e.g., select columns, adjust bins).
 4. The generated plot will be displayed on the main screen.
 
-## Requirements
-
-- Python 3.x
-- Streamlit
-- Pandas
-- Matplotlib
-- Seaborn
-
 ## Installation
 
 1. Clone the repository.
