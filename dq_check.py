@@ -5,6 +5,8 @@ import seaborn as sns
 import io
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler, StandardScaler
 
+st.set_page_config(page_title="Implementing Data Quality Analysis", layout="wide")
+
 # Streamlit app title
 st.title('Dataset Visualization and Analysis Tool')
 
