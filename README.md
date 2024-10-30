@@ -31,3 +31,5 @@ For the detailed installation and configuration guide, please refer to the Techn
         `cd [repository_name]`
 2. Install the required packages: `pip install streamlit pandas matplotlib seaborn`
 3. Run the app: `streamlit run dq_check.py`
+
+## Hosted link of the website : https://genericeda-eojxu6kgb2uyzpmtk6qgpg.streamlit.app/
