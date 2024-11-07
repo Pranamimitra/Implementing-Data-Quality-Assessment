@@ -117,9 +117,10 @@ if uploaded_file:
         elif visualization_type == 'Heatmap':
             st.write("Heatmap of correlation matrix:")
             plt.figure(figsize=(10, 6))
-            sns.heatmap(st.session_state.df.corr(), annot=True, cmap='coolwarm')
+            numeric_df = st.session_state.df.select_dtypes(include=['number'])  # Select only numeric columns
+            sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm')
             st.pyplot(plt)
-
+        
         elif visualization_type == 'Line Plot':
             x_col = st.sidebar.selectbox('Select X-axis', columns)
             y_col = st.sidebar.selectbox('Select Y-axis', columns)
